@@ -40,7 +40,7 @@ function displayTasks() {
     checkbox.type = "checkbox";
     checkbox.checked = task.completed;
     checkbox.addEventListener("change", () => {
-      markTaskAsCompleted(task.id);
+      taskCompleted(task.id);
     });
 
     const taskTitle = document.createElement("span");
@@ -78,7 +78,7 @@ function addTask() {
 }
 
 // Marquer une tâche comme terminée
-function markTaskAsCompleted(taskId) {
+function taskCompleted(taskId) {
   const task = taskList.tasks.find((task) => task.id === taskId);
 
   if (task) {
