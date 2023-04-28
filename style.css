@@ -11,23 +11,22 @@
 body {
   padding: 5rem 0;
   min-height: 100vh;
-  background-color: #1B14BB;
+  background-color: #1b14bb;
 }
 .container {
   width: 540px;
   margin: 0 auto;
   text-align: center;
-  background: #1B14BB;
+  background: #1b14bb;
   padding: 2rem 1rem;
   border-radius: 35px;
-  filter: drop-shadow(8px 8px #FFC03D);
-
+  filter: drop-shadow(8px 8px #ffc03d);
 }
 h1 {
   text-transform: uppercase;
   letter-spacing: 0.4rem;
   font-size: 2.35rem;
-  filter: drop-shadow(4px 2px #F80404);
+  filter: drop-shadow(4px 2px #f80404);
 }
 form {
   margin: 2rem 0;
@@ -38,58 +37,55 @@ form input {
   border-radius: 20px;
   padding: 0 20px;
   font-size: 1.3rem;
-  background: #FFC03D;
+  background: #ffc03d;
   transition: 0.7s;
-  filter: drop-shadow(5px 3px #F80404);
+  filter: drop-shadow(5px 3px #f80404);
 }
 form input::placeholder {
   color: white;
 }
 form input:focus {
-  background-color: #1B14BB;
-  border: 3px solid #F80404;
-  filter: drop-shadow(-5px -3px #FFC03D);
+  background-color: #1b14bb;
+  border: 3px solid #f80404;
+  filter: drop-shadow(-5px -3px #ffc03d);
 }
 
 ul {
   text-align: left;
 }
+
 ul li {
   list-style: none;
   padding: 0.7rem;
   position: relative;
   font-size: 1.2rem;
-  cursor: pointer;
-}
-ul li:before {
-  content: "";
-  padding: 0.6rem;
-  font-size: 1.3rem;
-}
-ul li:after {
-  opacity: 0;
-}
-ul li:hover:after {
-  content: " (terminé)";
-  opacity: 0;
-  font-size: 1.1rem;
-  color: #FFC03D;
-  animation: pseudoClassAnim 1s forwards;
-}
-li.checked:before {
-  content: "✔︎";
-  padding: 10px 10px;
-  font-size: 1.1rem;
-}
-li.checked:hover:after {
-  content: " (supprimer)";
-  font-size: 1.1rem;
-  color: #FFC03D;
-  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes pseudoClassAnim {
-  to {
-    opacity: 1;
-  }
+.checkbox {
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+padding: 10px;
+  border-radius: 20%;
+}
+
+.checkbox::after {
+  content: "✔";
+  font-size: 1.4rem;
+  margin: auto;
+  color: transparent;
+}
+
+.checkbox:checked::after {
+  color: #ffc03d;
+}
+
+button {
+  background: transparent;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
 }
