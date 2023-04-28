@@ -30,8 +30,8 @@ let taskList = {
 
 // Affichage de la liste des tâches
 function displayTasks() {
-  const listElement = document.getElementById("list");
-  listElement.innerHTML = "";
+  const list = document.getElementById("list");
+  list.innerHTML = "";
 
   taskList.tasks.forEach((task) => {
     const taskItem = document.createElement("li");
@@ -55,7 +55,7 @@ function displayTasks() {
     taskItem.appendChild(checkbox);
     taskItem.appendChild(taskTitle);
     taskItem.appendChild(deleteButton);
-    listElement.appendChild(taskItem);
+    list.appendChild(taskItem);
   });
 }
 
@@ -99,7 +99,7 @@ function deleteTask(taskId) {
 
 window.addEventListener("load", displayTasks);
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   addTask();
 });
