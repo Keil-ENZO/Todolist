@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 
+// Objet qui stocke les tâches
 class Tasks {
   constructor(id, title, completed) {
     this.id = id;
@@ -8,6 +9,7 @@ class Tasks {
   }
 }
 
+// Création d'une liste de tâches
 let taskList = {
   tasks: [
     {
@@ -97,8 +99,10 @@ function deleteTask(taskId) {
   }
 }
 
+// Evenement Initialisation de la page
 window.addEventListener("load", displayTasks);
 
+// Evenement Ajout d'une tâche
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   addTask();
